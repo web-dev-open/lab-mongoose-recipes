@@ -6,6 +6,7 @@ const Recipe = require('./models/Recipe.model');
 const data = require('./data');
 
 const MONGODB_URI = 'mongodb://localhost:27017/recipe-app';
+const JsonFile = require('./data.json')
 
 // Connection to the database "recipe-app"
 mongoose
@@ -16,19 +17,7 @@ mongoose
     return Recipe.deleteMany()
   })
   .then(() => {
-    Recipe.create(
-      {
-        title: "Blah-Dish-1",
-        level: "Easy Peasy",
-        ingredients: "Blah-1 Blah-2",
-        cuisine: "Asian",
-        dishType:"breakfast",
-        image: "https://images.media-allrecipes.com/images/75131.jpg",
-        duration: "10",
-        creator: "Chef-A",
-        created: new Date()
-      }
-    )
+    Recipe.insertMany(JsonFile)
        .then((res) => {
         console.log(res)
        })
