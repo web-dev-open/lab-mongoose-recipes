@@ -14,16 +14,25 @@ mongoose
   .then(x => {
     console.log(`Connected to the database: "${x.connection.name}"`);
     // Before adding any recipes to the database, let's remove all existing ones
-    return Recipe.deleteMany()
+    // return Recipe.deleteMany()
   })
   .then(() => {
-    Recipe.insertMany(JsonFile)
-       .then((res) => {
-        console.log(res)
-       })
-       .catch((err) => {
-        console.log("Something went wrong", err)
-       })
+    Recipe.findOneAndUpdate({"title": "Rigatoni alla Genovese"},
+                            {$inc: {duration: -100}} )
+                            .then((res) => {
+                              console.log(res)
+                            })
+                            .catch((err) => {
+                             console.log("Something went wrong", err)                          
+                            })
+    // Iteration #3: 
+    // Recipe.insertMany(JsonFile)
+    //    .then((res) => {
+    //     console.log(res)
+    //    })
+    //    .catch((err) => {
+    //     console.log("Something went wrong", err)
+    //    })
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
