@@ -17,14 +17,22 @@ mongoose
     // return Recipe.deleteMany()
   })
   .then(() => {
-    Recipe.findOneAndUpdate({"title": "Rigatoni alla Genovese"},
-                            {$inc: {duration: -100}} )
-                            .then((res) => {
-                              console.log(res)
-                            })
-                            .catch((err) => {
-                             console.log("Something went wrong", err)                          
-                            })
+    Recipe.deleteOne({"title": "Carrot Cake"} )
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((err) => {
+     console.log("Something went wrong", err)                          
+    })
+    //Iteration #4
+    // Recipe.findOneAndUpdate({"title": "Rigatoni alla Genovese"},
+    //                         {$inc: {duration: -100}} )
+    //                         .then((res) => {
+    //                           console.log(res)
+    //                         })
+    //                         .catch((err) => {
+    //                          console.log("Something went wrong", err)                          
+    //                         })
     // Iteration #3: 
     // Recipe.insertMany(JsonFile)
     //    .then((res) => {
