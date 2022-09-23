@@ -45,3 +45,7 @@ mongoose
   .catch(error => {
     console.error('Error connecting to the database', error);
   });
+  mongoose.connection.close(function() {
+    console.log('Mongoose default connection disconnected through app termination');
+    process.exit(0);
+  });
