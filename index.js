@@ -15,9 +15,73 @@ mongoose
     // Before adding any recipes to the database, let's remove all existing ones
     return Recipe.deleteMany()
   })
+
+// Iteration 2: Create a recipe
   .then(() => {
-    // Run your code here, after you have insured that the connection was made
+    // Add a new recipe to the database
+    return Recipe.create({
+      title: 'Your Recipe Title',
+      level: 'Easy Peasy',
+      ingredients: ['Ingredient 1', 'Ingredient 2'],
+      cuisine: 'Your Cuisine',
+      dishType: 'main_course',
+      image: 'https://example.com/image.jpg',
+      duration: 30,
+      creator: 'Your Name',
+    });
   })
+  .then((createdRecipe) => {
+    console.log(`Recipe created: ${createdRecipe.title}`);
+  })
+ 
+ // Iteration 3: Insert multiple recipes
+  .then(() => {
+    // Insert multiple recipes from data.json
+    return Recipe.insertMany(data);
+  })
+  .then((insertedRecipes) => {
+    // Print the title of each inserted recipe
+    insertedRecipes.forEach((recipe) => {
+      console.log(`Recipe inserted: ${recipe.title}`);
+    });
+  })
+
+// Iteration 4: Update recipe
+  // .then(() => {
+  //   return Recipe.insertMany(data);
+  // })  
+  .then(() => {
+    // Update the duration of 'Rigatoni alla Genovese' to 100
+    return Recipe.findOneAndUpdate(
+      { title: 'Rigatoni alla Genovese' },
+      { $set: { duration: 100 } },
+      { new: true }
+    );
+  })
+  .then((updatedRecipe) => {
+    // Print a success message
+    console.log(`Recipe updated successfully: ${updatedRecipe.title}`);
+  })
+
+// Iteration 5: Remove a recipe
+  // .then(() => {
+  //   return Recipe.insertMany(data);
+  // }) 
+  .then(() => {
+    // Remove the 'Carrot Cake' recipe
+    return Recipe.deleteOne({ title: 'Carrot Cake' });
+  })
+  .then(() => {
+    // Print a success message
+    console.log('Recipe removed successfully: Carrot Cake');
+  })
+
   .catch(error => {
     console.error('Error connecting to the database', error);
+  })
+
+// Iteration 6: Close the database
+  .finally(() => {
+    // Close the database connection after creating the recipe
+    mongoose.connection.close();
   });
