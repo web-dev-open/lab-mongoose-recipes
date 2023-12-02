@@ -1,23 +1,35 @@
 const mongoose = require('mongoose');
-
-// Import of the model Recipe from './models/Recipe.model.js'
 const Recipe = require('./models/Recipe.model');
-// Import of the data from './data.json'
-const data = require('./data');
 
-const MONGODB_URI = 'mongodb://localhost:27017/recipe-app';
+// Establish database connection
+mongoose.connect('your_mongodb_connection_string', { useNewUrlParser: true, useUnifiedTopology: true });
 
-// Connection to the database "recipe-app"
-mongoose
-  .connect(MONGODB_URI)
-  .then(x => {
-    console.log(`Connected to the database: "${x.connection.name}"`);
-    // Before adding any recipes to the database, let's remove all existing ones
-    return Recipe.deleteMany()
-  })
-  .then(() => {
-    // Run your code here, after you have insured that the connection was made
-  })
-  .catch(error => {
-    console.error('Error connecting to the database', error);
-  });
+// Check connection status
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+  console.log('Connected to the database');
+
+  // Create a new recipe document
+  const newRecipeDetails = {
+    title: 'Spaghetti Bolognese',
+    level: 'UltraPro Chef',
+    ingredients: ['500g ground beef', '1 onion', '2 cloves garlic', '400g canned tomatoes', '250g spaghetti'],
+    cuisine: 'Italian',
+    dishType: 'main_course',
+    duration: 45,
+    creator: 'Chef Maria',
+  };
+
+  Recipe.create(newRecipeDetails)
+    .then((createdRecipe) => {
+      console.log(`Recipe created successfully! Title: ${createdRecipe.title}`);
+    })
+    .catch((error) => {
+      console.error('Error creating recipe:', error.message);
+    })
+    .finally(() => {
+      // Close the database connection after creating the recipe
+      mongoose.connection.close();
+    });
+});
