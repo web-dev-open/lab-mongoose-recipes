@@ -91,5 +91,23 @@
     "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F4398987.jpg&w=596&h=399.32000000000005&c=sc&poi=face&q=85",
     "duration": 30,
     "creator": "Chef Jennifer"
+  },
+  {
+    "title": "Paneer Khurchan Masala",
+    "level": "UltraPro Chef",
+    "ingredients": [
+      "For Ginger Garlic Paste : 8-9 Garlic cloves, लहसुन, 1 inch Ginger, peeled, slice, अदरक, Salt to taste, नमक स्वादअनुसार",
+      "For Onion Tomato Masala : 2 tbsp Ghee, घी, ½ tbsp Oil, तेल, ½ tsp Cumin seeds, जीरा",
+      "Prepared Ginger Garlic Paste : 1 medium Onion, slice, प्याज, 1 tsp Coriander powder, धनिया पाउडर, ¼ tsp Cumin powder, जीरा पाउडर, A pinch of asafoetida, हींग, 1 tbsp Degi red chili powder, देगी लाल मिर्च पाउडर, ½ tsp Turmeric powder, हल्दी पाउडर, 1 cup fresh Tomato puree, ताज़े टमाटर की प्यूरी, 2 medium Tomato, chopped, टमाटर, ¼ cup Water, पानी, Leftover marination, बचा हुआ मैरिनेशन",
+      "For Paneer Tikka Marination : 1 ½ tsp Degi red chili powder, देगी लाल मिर्च पाउडर, ¼ tsp Coriander powder, धनिया पाउडर, A pinch of asafoetida, हींग, 1 tsp Ginger Garlic Paste, अदरक लहसुन का पेस्ट, Salt to taste, नमक स्वादअनुसार, 1 tsp Oil, तेल, 1 ½ tbsp Curd, beaten, दही, 1 tsp Roasted Gram flour, भुने चने का बेसन, 500 gms Paneer, cut into slab, पनीर",
+      "For Searing Paneer and Tossing : 1 tbsp Ghee, घी, Marinated Paneer, मैरिनेटेड पनीर, 1 large Capsicum, sliced, शिमला मिर्च, 1 medium Onion, sliced, प्याज",
+      "For Paneer Khurchan : Toasted Onion, capsicum, टॉस प्याज और शिमला मिर्च, Seared Paneer, sliced, तला हुआ पनीर, Prepared Onion Tomato Masala, तयार किया हुआ प्याज टमाटर मसाला, ½ medium Tomato, sliced, टमाटर, Salt to taste, नमक स्वादअनुसार, ½ tsp Dry fenugreek leaves, crushed, कसूरी मेथी, 1 Green chili, less spicy, slice, हरी मिर्च, 1 tbsp Coriander leaves, chopped, धनिया पत्ता",
+      "For Garnish : Coriander sprig, धनिया पत्ता"
+    ],
+    "cuisine": "Indian",
+    "dishType": "main_course",
+    "image": "https://img.youtube.com/vi/EwWO0IdbwfE/sddefault.jpg",
+    "duration": 30,
+    "creator": "Master Chef Tirth"
   }
 ]
