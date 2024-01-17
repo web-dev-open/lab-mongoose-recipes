@@ -3,7 +3,12 @@
 
 # Mongoose Recipes
 
-  
+  ![Screenshot 2023-12-24 165827](https://github.com/Devil-2621/lab-mongoose-recipes/assets/119029321/e1c3d225-0feb-42c6-a52c-68427e40b787)
+
+<hr>
+
+![Screenshot 2023-12-24 165844](https://github.com/Devil-2621/lab-mongoose-recipes/assets/119029321/12c55e26-4184-43c1-a7bb-3ad8380d4db6)
+
 
 ## Introduction
 
